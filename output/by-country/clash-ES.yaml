@@ -5,80 +5,53 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇪🇸 西班牙 (Spain) 01 - xiaohe
-  type: ss
-  server: 108.181.121.226
-  port: 8388
-  cipher: chacha20-ietf-poly1305
-  password: WSyL4XTwNsdv
+  server: 66.163.118.73
+  port: 22324
   udp: true
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
 - name: 🇪🇸 西班牙 (Spain) 02 - xiaohe
-  type: ss
   server: 108.181.121.226
   port: 8388
+  udp: true
+  type: ss
   cipher: chacha20-ietf-poly1305
   password: WSyL4XTwNsdv
-  udp: true
 - name: 🇪🇸 西班牙 (Spain) 03 - xiaohe
-  type: vmess
-  server: 66.163.118.73
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇪🇸 西班牙 (Spain) 04 - xiaohe
-  type: vmess
-  server: 66.163.118.73
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇪🇸 西班牙 (Spain) 05 - xiaohe
-  type: vmess
-  server: 66.163.118.73
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇪🇸 西班牙 (Spain) 06 - xiaohe
-  type: vmess
-  server: 66.163.118.73
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇪🇸 西班牙 (Spain) 07 - xiaohe
-  type: ss
   server: 140.174.184.5
   port: 8388
+  udp: true
+  type: ss
   cipher: chacha20-ietf-poly1305
   password: qItG8SueYQcP
-  udp: true
-- name: 🇪🇸 西班牙 (Spain) 08 - xiaohe
-  type: vless
-  server: 31.57.190.62
+- name: 🇪🇸 西班牙 (Spain) 04 - xiaohe
+  server: 193.238.154.5
   port: 443
-  uuid: b1c31d36-c6b5-414b-88d2-9e24e7bfcca3
   udp: true
+  type: vless
+  uuid: e0b9fb0f-1bbd-478b-9580-c2294778338b
   tls: true
-  skip-cert-verify: true
-  servername: www.nihaoyun.top
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: www.nihaoyun.top
+  servername: assets-es.pleiades.codes
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  network: grpc
+  grpc-opts:
+    grpc-service-name: cdn.v1.AssetService
+- name: 🇪🇸 西班牙 (Spain) 05 - xiaohe
+  server: 46.28.71.247
+  port: 443
+  udp: true
+  type: vless
+  uuid: 12c53e32-e589-47d6-b857-e4132294f767
+  flow: xtls-rprx-vision
+  tls: true
+  reality-opts:
+    public-key: v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE
+    short-id: 0dfc23fe80778c00
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
 proxy-groups:
 - name: PROXIES
   type: select
@@ -89,12 +62,9 @@ proxy-groups:
   - 🇪🇸 西班牙 (Spain) 03 - xiaohe
   - 🇪🇸 西班牙 (Spain) 04 - xiaohe
   - 🇪🇸 西班牙 (Spain) 05 - xiaohe
-  - 🇪🇸 西班牙 (Spain) 06 - xiaohe
-  - 🇪🇸 西班牙 (Spain) 07 - xiaohe
-  - 🇪🇸 西班牙 (Spain) 08 - xiaohe
 - name: AUTO
   type: url-test
-  url: https://www.google.com/generate_204
+  url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇪🇸 西班牙 (Spain) 01 - xiaohe
@@ -102,8 +72,5 @@ proxy-groups:
   - 🇪🇸 西班牙 (Spain) 03 - xiaohe
   - 🇪🇸 西班牙 (Spain) 04 - xiaohe
   - 🇪🇸 西班牙 (Spain) 05 - xiaohe
-  - 🇪🇸 西班牙 (Spain) 06 - xiaohe
-  - 🇪🇸 西班牙 (Spain) 07 - xiaohe
-  - 🇪🇸 西班牙 (Spain) 08 - xiaohe
 rules:
 - MATCH,PROXIES
