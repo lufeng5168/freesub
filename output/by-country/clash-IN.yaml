@@ -17,6 +17,17 @@ proxies:
   servername: www.apple.com
   client-fingerprint: chrome
 - name: 🇮🇳 印度 (India) 02 - xiaohe
+  server: 152.67.8.205
+  port: 80
+  udp: true
+  type: vmess
+  uuid: 9db4c708-aef8-4359-821b-38e47990be0d
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /
+- name: 🇮🇳 印度 (India) 03 - xiaohe
   server: 185.67.125.90
   port: 443
   udp: true
@@ -32,6 +43,13 @@ proxies:
     path: /linkvws
     headers:
       Host: aksai.org
+- name: 🇮🇳 印度 (India) 04 - xiaohe
+  server: 45.149.114.171
+  port: 777
+  udp: true
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: Jeoq8ujfkqZKKvACQhoqBQ1PA3uq4242
 proxy-groups:
 - name: PROXIES
   type: select
@@ -39,6 +57,8 @@ proxy-groups:
   - AUTO
   - 🇮🇳 印度 (India) 01 - xiaohe
   - 🇮🇳 印度 (India) 02 - xiaohe
+  - 🇮🇳 印度 (India) 03 - xiaohe
+  - 🇮🇳 印度 (India) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -46,5 +66,7 @@ proxy-groups:
   proxies:
   - 🇮🇳 印度 (India) 01 - xiaohe
   - 🇮🇳 印度 (India) 02 - xiaohe
+  - 🇮🇳 印度 (India) 03 - xiaohe
+  - 🇮🇳 印度 (India) 04 - xiaohe
 rules:
 - MATCH,PROXIES
