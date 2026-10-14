@@ -29,7 +29,7 @@ proxies:
     public-key: 5BDht3tAZdKEKpJymGlRK9JugOnieA-kMSWz_0FoE0I
     short-id: 6f76ad09
   servername: addons.mozilla.org
-  client-fingerprint: random
+  client-fingerprint: randomized
 - name: 🇦🇪 阿联酋 (UAE) 03 - xiaohe
   server: 31.59.210.37
   port: 443
