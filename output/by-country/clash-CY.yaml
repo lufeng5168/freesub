@@ -4,31 +4,28 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 其他地区 (Other) 01 - xiaohe
-  server: 104.19.48.107
-  port: 443
+- name: 🇨🇾 塞浦路斯 (Cyprus) 01 - xiaohe
+  server: 5.253.29.254
+  port: 14430
   udp: true
   type: vless
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  tls: true
-  servername: jp3.yohototo.top
-  skip-cert-verify: false
+  uuid: c7c27192-60a5-4ce1-b613-95270d82309d
   network: ws
   ws-opts:
-    path: /tyxyws
+    path: /vless
     headers:
-      Host: jp3.yohototo.top
+      Host: 5.253.29.254
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🌐 其他地区 (Other) 01 - xiaohe
+  - 🇨🇾 塞浦路斯 (Cyprus) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 其他地区 (Other) 01 - xiaohe
+  - 🇨🇾 塞浦路斯 (Cyprus) 01 - xiaohe
 rules:
 - MATCH,PROXIES
