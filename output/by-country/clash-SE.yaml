@@ -39,7 +39,6 @@ proxies:
   tls: true
   servername: edge-lab-b.10media.top
   skip-cert-verify: false
-  client-fingerprint: firefox
   network: grpc
   grpc-opts:
     grpc-service-name: swedenfeed
@@ -51,10 +50,13 @@ proxies:
   uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
   tls: true
   servername: sub.merky.top
-  skip-cert-verify: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
   network: ws
   ws-opts:
     path: /merky-connect/de6/
+    headers:
+      Host: sub.merky.top
 proxy-groups:
 - name: PROXIES
   type: select

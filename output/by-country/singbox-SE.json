@@ -50,11 +50,7 @@
       "tls": {
         "enabled": true,
         "server_name": "edge-lab-b.10media.top",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
+        "insecure": false
       },
       "transport": {
         "type": "grpc",
@@ -70,11 +66,18 @@
       "tls": {
         "enabled": true,
         "server_name": "sub.merky.top",
-        "insecure": true
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       },
       "transport": {
         "type": "ws",
-        "path": "/merky-connect/de6/"
+        "path": "/merky-connect/de6/",
+        "headers": {
+          "Host": "sub.merky.top"
+        }
       }
     },
     {
