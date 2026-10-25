@@ -4,32 +4,31 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🌐 其他地区 (Other) 01 - xiaohe
-  server: 172.67.155.222
+- name: 🇨🇳 CN 01 - xiaohe
+  server: 8.35.211.242
   port: 443
   udp: true
   type: vless
-  uuid: 82b279c6-5cba-3a96-f8bd-780a00000035
+  uuid: fc7d2cfe-f5ef-40c8-a848-a0bdc11f6349
   tls: true
-  servername: pi7ews-woj41w-7wx0gk.ho3ein13-3af.workers.dev
+  servername: vpn.cintaku.qzz.io
   skip-cert-verify: false
-  client-fingerprint: chrome
   network: ws
   ws-opts:
-    path: /sync
+    path: /vlessws
     headers:
-      Host: pi7ews-woj41w-7wx0gk.ho3ein13-3af.workers.dev
+      Host: vpn.cintaku.qzz.io
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🌐 其他地区 (Other) 01 - xiaohe
+  - 🇨🇳 CN 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🌐 其他地区 (Other) 01 - xiaohe
+  - 🇨🇳 CN 01 - xiaohe
 rules:
 - MATCH,PROXIES
