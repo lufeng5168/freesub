@@ -4,48 +4,26 @@
   },
   "outbounds": [
     {
-      "type": "trojan",
+      "type": "vless",
       "tag": "🇧🇬 保加利亚 (Bulgaria) 01 - xiaohe",
-      "server": "172.66.47.158",
+      "server": "88.80.150.15",
       "server_port": 443,
-      "password": "Nd2bFutZK2ma29bYqC@z",
+      "uuid": "1d46250c-f015-439d-a7fd-c4d9e2a4c63d",
       "tls": {
         "enabled": true,
-        "server_name": "4oKhrijUyjyTFlnvoWhL3ZFW5wSGI34O.PAGeS.DeV",
+        "server_name": "bg2.oncloudvpn.com",
         "insecure": false,
         "alpn": [
-          "http/1.1"
+          "h2"
         ],
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "edge"
         }
       },
       "transport": {
-        "type": "ws",
-        "path": "/tr/2W6ONoBA1CTMk80znuAVgQ9dvWey2KD8?ed=2560",
-        "headers": {
-          "Host": "4okhrijuyjytflnvowhl3zfw5wsgi34o.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇧🇬 保加利亚 (Bulgaria) 02 - xiaohe",
-      "server": "191.44.112.170.sslip.io",
-      "server_port": 443,
-      "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
-      "tls": {
-        "enabled": true,
-        "server_name": "orbylume.my.to",
-        "insecure": false
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tvpn-trojan/bg",
-        "headers": {
-          "Host": "orbylume.my.to"
-        }
+        "type": "grpc",
+        "service_name": "grpc"
       }
     },
     {
@@ -53,16 +31,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇧🇬 保加利亚 (Bulgaria) 01 - xiaohe",
-        "🇧🇬 保加利亚 (Bulgaria) 02 - xiaohe"
+        "🇧🇬 保加利亚 (Bulgaria) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇧🇬 保加利亚 (Bulgaria) 01 - xiaohe",
-        "🇧🇬 保加利亚 (Bulgaria) 02 - xiaohe"
+        "🇧🇬 保加利亚 (Bulgaria) 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
